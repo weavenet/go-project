@@ -20,9 +20,11 @@ find . -type f -name 'Makefile' -exec sed -i '' s/go-project/$NAME/g {} +
 mv go-project/go-project go-project/$NAME
 mv go-project $NAME
 
-echo "Writin README.md"
+echo "Writing README.md"
 cat > $NAME/README.md << EOF
 # $NAME
 
 Created from go-project
 EOF
+
+echo "Project $NAME created."
