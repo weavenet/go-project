@@ -1,5 +1,11 @@
 # go-project
 
+# Prerequisites
+
+go-project assumes you have the **go** compiler and **make** in your path.
+
+# Usage
+
 To setup a new project, run the following:
 
     git clone https://github.com/brettweavnet/go-project
