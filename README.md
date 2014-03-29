@@ -1,5 +1,7 @@
 # go-project
 
+Setup Go project shell directory.
+
 # Prerequisites
 
 go-project assumes you have the **go** compiler and **make** in your path.
