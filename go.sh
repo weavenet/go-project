@@ -21,8 +21,21 @@ fi
 set -e
 
 echo "Renaming to $NAME."
-find . -type f -name '*.md' -exec sed -i '' s/go-project/$NAME/g {} +
-find . -type f -name 'Makefile' -exec sed -i '' s/go-project/$NAME/g {} +
+
+case `uname` in
+  Linux)
+    find . -type f -name '*.md' -exec sed -i 's/go-project/$NAME/g' {} \;
+    find . -type f -name 'Makefile' -exec sed -i 's/go-project/$NAME/g' {} \;
+    ;;
+  Darwin)
+    find . -type f -name '*.md' -exec sed -i '' s/go-project/$NAME/g {} +
+    find . -type f -name 'Makefile' -exec sed -i '' s/go-project/$NAME/g {} +
+    ;;
+  *)
+    echo -e "Unknown OS"
+    exit 1
+esac
+
 mv go-project/go-project go-project/$NAME
 mv go-project $NAME
 
