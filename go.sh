@@ -7,8 +7,14 @@ function help {
 }
 
 if [ "$NAME" == "" ]; then
-  echo -e "\nPlease specify name."
+  echo -e "Please specify name."
   help
+  exit 1
+fi
+
+which sed
+if [ $? -ne 0 ]; then
+  echo -e "sed must be in your path."
   exit 1
 fi
 
