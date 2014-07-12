@@ -24,8 +24,8 @@ echo "Renaming to $NAME."
 
 case `uname` in
   Linux)
-    find . -type f -name '*.md' -exec sed -i 's/go-project/$NAME/g' {} \;
-    find . -type f -name 'Makefile' -exec sed -i 's/go-project/$NAME/g' {} \;
+    find . -type f -name '*.md' -exec sed -i "s/go-project/$NAME/g" {} \;
+    find . -type f -name 'Makefile' -exec sed -i "s/go-project/$NAME/g" {} \;
     ;;
   Darwin)
     find . -type f -name '*.md' -exec sed -i '' s/go-project/$NAME/g {} +
